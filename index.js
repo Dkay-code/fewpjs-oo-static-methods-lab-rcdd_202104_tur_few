@@ -11,7 +11,7 @@ class Formatter {
    if (string[0]){
      return capitalize(string);
    }
-   else if (string === 'a' || string === 'an' || string === 'but' || string === 'of' || string === 'and' || string === 'for' || string === 'at' || string === 'by' || string === 'from)'){
+  if (string === 'a' || string === 'an' || string === 'but' || string === 'of' || string === 'and' || string === 'for' || string === 'at' || string === 'by' || string === 'from)'){
      return string;
    } else {
      return string.charAt().toUpperCase();
