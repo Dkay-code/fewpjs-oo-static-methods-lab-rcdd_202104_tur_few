@@ -8,7 +8,7 @@ class Formatter {
  }
 
  static titleize(string){
-   if string[0]{
+   if (string[0]){
      return string.charAt().toUpperCase();
    }
    else if (string === 'a' || string === 'an' || string === 'but' || string === 'of' || string === 'and' || string === 'for' || string === 'at' || string === 'by' || string === 'from)'){
