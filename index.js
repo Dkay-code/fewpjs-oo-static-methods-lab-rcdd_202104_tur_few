@@ -8,13 +8,21 @@ class Formatter {
  }
 
  static titleize(string){
-   if (string[0]){
-     return capitalize(string);
-   }
-  if (string === 'a' || string === 'an' || string === 'but' || string === 'of' || string === 'and' || string === 'for' || string === 'at' || string === 'by' || string === 'from)'){
-     return string;
-   } else {
-     return string.charAt().toUpperCase();
-   }
+   let stringArr = string.split(' ');
+
+      for(let i = 0; i < stringArr.length; i++){
+        let exceptionRegex = /^.*\b(the|a|an|but|of|and|for|at|by|from)\b.*$/gm;
+
+        if (i === 0) {
+          stringArr[i] = this.capitalize(stringArr[i]);
+        }
+        if (exceptionRegex.test(stringArr[i])){
+          stringArr[i] = stringArr[i].toLowerCase();
+        }
+        else {
+          stringArr[i] = this.capitalize(stringArr[i]);
+        }
+      }
+      return stringArr.join(' ');
  }
 }
